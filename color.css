@@ -22,4 +22,6 @@ h1{
 
 #space{
   background-color: white;
+  height: 30px;
+  text-align: center;
 }
