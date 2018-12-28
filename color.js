@@ -4,6 +4,7 @@ var squares = document.querySelectorAll(".square");
 var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.getElementById("message");
+var heading = document.querySelector("h1");
 
 colorDisplay.textContent = pickedColor;
 
@@ -16,7 +17,8 @@ for(var i = 0; i < squares.length; i++){
         messageDisplay.textContent = "Try Again";
       }else{
         messageDisplay.textContent = "Correct!!!";
-        changeColors(clickedColor)
+        changeColors(clickedColor);
+        heading.style.backgroundColor =clickedColor;
       }
     });
 };
@@ -46,5 +48,5 @@ function randomColor(){
     var green = Math.floor(Math.random() * 256);
     var blue = Math.floor(Math.random() * 256);
 
-    return "rgb(" + red + "," + green + "," + blue + ")";
+    return "rgb(" + red + ", " + green + ", " + blue + ")";
 }
