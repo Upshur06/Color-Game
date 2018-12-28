@@ -1,17 +1,9 @@
-var colors = [
-  "rgb(255, 0, 0)",
-  "rgb(255, 255, 0)",
-  "rgb(0, 255, 0)",
-  "rgb(0, 255, 255)",
-  "rgb(0, 0, 255)",
-  "rgb(255, 0, 255)",
-];
+var colors = generatedRandomColors(6);
 
 var squares = document.querySelectorAll(".square");
 var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.getElementById("message");
-
 
 colorDisplay.textContent = pickedColor;
 
@@ -40,3 +32,19 @@ function pickColor(){
     var random = Math.floor(Math.random() * colors.length);
     return colors[random];
 };
+
+function generatedRandomColors(number){
+  var array = [];
+  for(var i = 0; i < number; i++){
+    array.push(randomColor());
+  }
+  return array
+};
+
+function randomColor(){
+    var red = Math.floor(Math.random() * 256);
+    var green = Math.floor(Math.random() * 256);
+    var blue = Math.floor(Math.random() * 256);
+
+    return "rgb(" + red + "," + green + "," + blue + ")";
+}
