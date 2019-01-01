@@ -61,8 +61,10 @@ function randomColor(){
 resetButton.addEventListener("click", function(){
     colors = generatedRandomColors(numberofSquares);
     pickedColor = pickColor();
-    colorDisplay.textContent = pickedColor
-    heading.style.backgroundColor = "#232323"
+    colorDisplay.textContent = pickedColor;
+    heading.style.backgroundColor = "steelblues";
+    messageDisplay.textContent = " ";
+    this.textContent = "New Colors";
     for(var i = 0; i < squares.length; i++){
         squares[i].style.backgroundColor = colors[i];
     };
@@ -94,9 +96,7 @@ hardButton.addEventListener("click", function(){
   pickedColor = pickColor();
   colorDisplay.textContent = pickedColor
   for(var i = 0; i < squares.length; i++){
-
       squares[i].style.backgroundColor = colors[i];
-
       squares[i].style.display = "block";
   }
 });
